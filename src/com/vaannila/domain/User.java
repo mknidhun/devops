@@ -43,12 +43,25 @@ public class User {
 	public String[] getCommunity() {
 		return community;
 	}
-	public void setCommunity(String[] community) {
-		this.community = community;
-	}
-	public Boolean getMailingList() {
-		return mailingList;
-	}
+        public void setCommunity(String[] community) {
+                this.community = community;
+        }
+        public String getCommunityString() {
+                if (community == null) {
+                        return "";
+                }
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < community.length; i++) {
+                        if (i > 0) {
+                                sb.append(", ");
+                        }
+                        sb.append(community[i]);
+                }
+                return sb.toString();
+        }
+        public Boolean getMailingList() {
+                return mailingList;
+        }
 	public void setMailingList(Boolean mailingList) {
 		this.mailingList = mailingList;
 	}
